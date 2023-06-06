@@ -53,7 +53,7 @@ function App() {
 
     return (
         <div className="App">
-            <h1 className="title">Todo List Example</h1>
+            <h1 className="title">Todo List</h1>
             <input
                 type="text"
                 value={newTodo}
