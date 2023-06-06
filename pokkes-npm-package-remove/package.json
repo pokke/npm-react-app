@@ -1,6 +1,6 @@
 {
     "name": "pokkes-npm-package-remove",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Remove function",
     "main": "index.js",
     "scripts": {
