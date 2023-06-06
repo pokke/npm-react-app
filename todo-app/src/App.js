@@ -4,7 +4,7 @@ import {
     markAsUncompleted,
     createTodo,
 } from 'pokkes-npm-package-utils';
-import { removeTodo } from 'pokkes-npm-package-remove';
+import { removeTodo, removeTodoByCondition } from 'pokkes-npm-package-remove';
 import './App.css';
 
 function App() {
@@ -37,6 +37,14 @@ function App() {
         const updatedTodos = removeTodo(todos, todoToRemove);
         setTodos(updatedTodos);
         localStorage.setItem('todos', JSON.stringify(updatedTodos));
+    };
+
+    const handleRemoveCompleted = () => {
+        const updatedTodos = removeTodoByCondition(
+            todos,
+            (todo) => todo.completed
+        );
+        setTodos(updatedTodos);
     };
 
     const addTodo = () => {
@@ -101,6 +109,9 @@ function App() {
             <div className="pagination-buttons">
                 <button onClick={prevPage} disabled={page === 0}>
                     Previous
+                </button>
+                <button onClick={handleRemoveCompleted}>
+                    Remove completed
                 </button>
                 <button
                     onClick={nextPage}

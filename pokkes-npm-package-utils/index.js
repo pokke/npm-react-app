@@ -20,7 +20,12 @@ function createTodo(title) {
     };
 }
 
+function filterTodosByCondition(todos, conditionFunc) {
+    return todos.filter(conditionFunc);
+}
+
 module.exports = {
+    filterTodosByCondition,
     createTodo,
     markAsCompleted,
     markAsUncompleted,
