@@ -36,7 +36,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin: 5 5px;
+    margin: 0 5px;
 }
 
 button:disabled {
@@ -66,4 +66,12 @@ button:disabled {
     text-decoration: line-through;
     color: #4d4c4c;
     background-color: #be503c;
+}
+
+.pagination-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
 }

@@ -68,15 +68,6 @@ function App() {
                 placeholder="Add new todo"
             />
             <button onClick={addTodo}>Add</button>
-            <button onClick={prevPage} disabled={page === 0}>
-                Previous
-            </button>
-            <button
-                onClick={nextPage}
-                disabled={page >= Math.ceil(todos.length / todosPerPage) - 1}
-            >
-                Next
-            </button>
             <ul className="todo-list">
                 {todosToShow.map((todo) => (
                     <li
@@ -98,6 +89,19 @@ function App() {
                     </li>
                 ))}
             </ul>
+            <div className="pagination-buttons">
+                <button onClick={prevPage} disabled={page === 0}>
+                    Previous
+                </button>
+                <button
+                    onClick={nextPage}
+                    disabled={
+                        page >= Math.ceil(todos.length / todosPerPage) - 1
+                    }
+                >
+                    Next
+                </button>
+            </div>
         </div>
     );
 }
