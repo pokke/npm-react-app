@@ -36,7 +36,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin: 0 5px;
+    margin: 5 5px;
 }
 
 button:disabled {
@@ -55,7 +55,7 @@ button:disabled {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #52f04c;
+    background-color: #669c64;
     margin-bottom: 10px;
     padding: 15px;
     border-radius: 5px;
