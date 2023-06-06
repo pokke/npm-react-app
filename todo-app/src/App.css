@@ -75,3 +75,7 @@ button:disabled {
     max-width: 800px;
     margin: 20px auto;
 }
+
+button {
+    margin: 0 5px;
+}
