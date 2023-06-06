@@ -1,17 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import { markAsCompleted, markAsUncompleted } from 'pokkes-npm-package';
+import { markAsCompleted, markAsUncompleted } from 'react-todo-utils';
 import fetchData from 'pokkes-npm-package';
 import './App.css';
 
 function App() {
-    const [todos, setTodos] = useState([]);
+    const [todos, setTodos] = useState(
+        JSON.parse(localStorage.getItem('todos')) || []
+    );
     const [page, setPage] = useState(0);
 
     useEffect(() => {
-        fetchData('https://jsonplaceholder.typicode.com/todos').then((chunks) =>
-            setTodos(chunks)
-        );
-    }, []);
+        if (!todos.length) {
+            fetchData('https://jsonplaceholder.typicode.com/todos').then(
+                (chunks) => {
+                    setTodos(chunks);
+                    localStorage.setItem('todos', JSON.stringify(chunks));
+                }
+            );
+        }
+    }, [todos]);
 
     const next = () => {
         setPage(page + 1);
@@ -21,6 +28,22 @@ function App() {
         if (page > 0) {
             setPage(page - 1);
         }
+    };
+
+    const handleCompleted = (todo) => {
+        const updatedTodos = todos.map((t) =>
+            t.id === todo.id ? markAsCompleted(t) : t
+        );
+        setTodos(updatedTodos);
+        localStorage.setItem('todos', JSON.stringify(updatedTodos));
+    };
+
+    const handleUncompleted = (todo) => {
+        const updatedTodos = todos.map((t) =>
+            t.id === todo.id ? markAsUncompleted(t) : t
+        );
+        setTodos(updatedTodos);
+        localStorage.setItem('todos', JSON.stringify(updatedTodos));
     };
 
     return (
@@ -47,31 +70,11 @@ function App() {
                         key={todo.id}
                     >
                         {todo.title}
-                        <button
-                            onClick={() =>
-                                setTodos(
-                                    todos.map((t) =>
-                                        t.id === todo.id
-                                            ? markAsCompleted(t)
-                                            : t
-                                    )
-                                )
-                            }
-                        >
-                            Done
+                        <button onClick={() => handleCompleted(todo)}>
+                            Mark as completed
                         </button>
-                        <button
-                            onClick={() =>
-                                setTodos(
-                                    todos.map((t) =>
-                                        t.id === todo.id
-                                            ? markAsUncompleted(t)
-                                            : t
-                                    )
-                                )
-                            }
-                        >
-                            Undone
+                        <button onClick={() => handleUncompleted(todo)}>
+                            Mark as uncompleted
                         </button>
                     </li>
                 ))}
