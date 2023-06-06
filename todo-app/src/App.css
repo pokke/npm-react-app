@@ -84,15 +84,15 @@ button:disabled {
 .actions-container {
     display: flex;
     justify-content: space-between;
-    width: 25px;
-    margin-right: 10px;
+    width: 5px;
+    margin-right: 5px;
 }
 
 .remove-container button {
     background-color: darkred;
 }
 .add-todo-container button {
-    height: 36px;
+    height: 40px;
     padding: 10px 20px;
     font-size: 16px;
     color: #fff;
