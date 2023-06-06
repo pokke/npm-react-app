@@ -61,6 +61,15 @@ button:disabled {
     border-radius: 5px;
     color: #333;
 }
+.todo-item .title-container {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.todo-item .actions-container {
+    display: flex;
+    align-items: center;
+}
 
 .todo-item.completed {
     color: #4d4c4c;
@@ -92,7 +101,7 @@ button:disabled {
     background-color: darkred;
 }
 .add-todo-container button {
-    height: 40px;
+    height: 42px;
     padding: 10px 20px;
     font-size: 16px;
     color: #fff;
