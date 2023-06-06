@@ -41,7 +41,7 @@ function App() {
             title: newTodo,
             completed: false,
         };
-        setTodos([...todos, todo]);
+        setTodos([todo, ...todos]);
         setNewTodo('');
     };
 
