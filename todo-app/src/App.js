@@ -58,7 +58,7 @@ function App() {
                                 )
                             }
                         >
-                            Mark as completed
+                            Done
                         </button>
                         <button
                             onClick={() =>
@@ -71,7 +71,7 @@ function App() {
                                 )
                             }
                         >
-                            Mark as uncompleted
+                            Undone
                         </button>
                     </li>
                 ))}
