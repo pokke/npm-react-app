@@ -24,7 +24,7 @@ function App() {
 
     return (
         <div className="App">
-            <h1 className="title">Todo List</h1>
+            <h1 className="title">Todo List Example</h1>
             <div className="buttons">
                 <button className="button" onClick={prev} disabled={page === 0}>
                     Prev
