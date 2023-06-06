@@ -21,7 +21,7 @@ function createTodo(title) {
 }
 
 function filterTodosByCondition(todos, conditionFunc) {
-    return todos.filter(conditionFunc);
+    return todos.filter((todo) => !conditionFunc(todo));
 }
 
 module.exports = {
