@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { markAsCompleted, markAsUncompleted } from 'pokkes-npm-package-utils';
+import { removeTodo } from 'pokkes-npm-package-remove';
 import './App.css';
 
 function App() {
@@ -26,6 +27,12 @@ function App() {
             t.id === todo.id ? markAsUncompleted(t) : t
         );
         setTodos(updatedTodos);
+    };
+
+    const handleRemove = (todoToRemove) => {
+        const updatedTodos = removeTodo(todos, todoToRemove);
+        setTodos(updatedTodos);
+        localStorage.setItem('todos', JSON.stringify(updatedTodos));
     };
 
     const addTodo = () => {
@@ -84,6 +91,9 @@ function App() {
                         </button>
                         <button onClick={() => handleUncompleted(todo)}>
                             Undo
+                        </button>
+                        <button onClick={() => handleRemove(todo)}>
+                            Remove
                         </button>
                     </li>
                 ))}
