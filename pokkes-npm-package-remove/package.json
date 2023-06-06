@@ -1,7 +1,7 @@
 {
     "name": "pokkes-npm-package-remove",
-    "version": "1.0.3",
-    "description": "Remove function",
+    "version": "1.0.4",
+    "description": "Remove functions",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
