@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { markAsCompleted, markAsUncompleted } from 'pokkes-npm-package';
 import fetchData from 'pokkes-npm-package';
 import './App.css';
 
@@ -46,6 +47,32 @@ function App() {
                         key={todo.id}
                     >
                         {todo.title}
+                        <button
+                            onClick={() =>
+                                setTodos(
+                                    todos.map((t) =>
+                                        t.id === todo.id
+                                            ? markAsCompleted(t)
+                                            : t
+                                    )
+                                )
+                            }
+                        >
+                            Mark as completed
+                        </button>
+                        <button
+                            onClick={() =>
+                                setTodos(
+                                    todos.map((t) =>
+                                        t.id === todo.id
+                                            ? markAsUncompleted(t)
+                                            : t
+                                    )
+                                )
+                            }
+                        >
+                            Mark as uncompleted
+                        </button>
                     </li>
                 ))}
             </ul>
