@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { markAsCompleted, markAsUncompleted } from 'react-todo-utils';
+import { markAsCompleted, markAsUncompleted } from 'pokkes-npm-package-utils';
 import fetchData from 'pokkes-npm-package';
 import './App.css';
 
