@@ -37,7 +37,7 @@ function App() {
 
     const addTodo = () => {
         const todo = {
-            id: todos.length + 1,
+            id: Date.now(),
             title: newTodo,
             completed: false,
         };
