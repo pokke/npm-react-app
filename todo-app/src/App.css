@@ -92,7 +92,8 @@ button:disabled {
     width: 100%;
 }
 
-.remove-container button {
+.remove-container button,
+.remove-completed-button {
     background-color: darkred;
 }
 

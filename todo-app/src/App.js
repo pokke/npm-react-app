@@ -110,7 +110,10 @@ function App() {
                 <button onClick={prevPage} disabled={page === 0}>
                     Previous
                 </button>
-                <button onClick={handleRemoveCompleted}>
+                <button
+                    onClick={handleRemoveCompleted}
+                    className="remove-completed-button"
+                >
                     Remove completed
                 </button>
                 <button
