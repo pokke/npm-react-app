@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { markAsCompleted, markAsUncompleted } from 'pokkes-npm-package-utils';
+import {
+    markAsCompleted,
+    markAsUncompleted,
+    createTodo,
+} from 'pokkes-npm-package-utils';
 import { removeTodo } from 'pokkes-npm-package-remove';
 import './App.css';
 
@@ -36,11 +40,7 @@ function App() {
     };
 
     const addTodo = () => {
-        const todo = {
-            id: Date.now(),
-            title: newTodo,
-            completed: false,
-        };
+        const todo = createTodo(newTodo);
         setTodos([todo, ...todos]);
         setNewTodo('');
     };
