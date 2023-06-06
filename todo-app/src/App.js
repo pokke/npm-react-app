@@ -80,12 +80,15 @@ function App() {
                     >
                         {todo.title}
                         <div className="actions-container">
-                            <button onClick={() => handleCompleted(todo)}>
-                                Done
-                            </button>
-                            <button onClick={() => handleUncompleted(todo)}>
-                                Undo
-                            </button>
+                            {todo.completed ? (
+                                <button onClick={() => handleUncompleted(todo)}>
+                                    Undo
+                                </button>
+                            ) : (
+                                <button onClick={() => handleCompleted(todo)}>
+                                    Done
+                                </button>
+                            )}
                         </div>
                         <div className="remove-container">
                             <button onClick={() => handleRemove(todo)}>
