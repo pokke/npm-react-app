@@ -76,6 +76,19 @@ button:disabled {
     margin: 20px auto;
 }
 
-button {
-    margin: 0 5px;
+.add-todo-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.actions-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+    margin-right: 10px;
+}
+
+.remove-container button {
+    background-color: darkred;
 }

@@ -61,13 +61,15 @@ function App() {
     return (
         <div className="App">
             <h1 className="title">Todo List</h1>
-            <input
-                type="text"
-                value={newTodo}
-                onChange={(e) => setNewTodo(e.target.value)}
-                placeholder="Add new todo"
-            />
-            <button onClick={addTodo}>Add</button>
+            <div className="add-todo-container">
+                <input
+                    type="text"
+                    value={newTodo}
+                    onChange={(e) => setNewTodo(e.target.value)}
+                    placeholder="Add new todo"
+                />
+                <button onClick={addTodo}>Add</button>
+            </div>
             <ul className="todo-list">
                 {todosToShow.map((todo) => (
                     <li
@@ -77,15 +79,19 @@ function App() {
                         key={todo.id}
                     >
                         {todo.title}
-                        <button onClick={() => handleCompleted(todo)}>
-                            Done
-                        </button>
-                        <button onClick={() => handleUncompleted(todo)}>
-                            Undo
-                        </button>
-                        <button onClick={() => handleRemove(todo)}>
-                            Remove
-                        </button>
+                        <div className="actions-container">
+                            <button onClick={() => handleCompleted(todo)}>
+                                Done
+                            </button>
+                            <button onClick={() => handleUncompleted(todo)}>
+                                Undo
+                            </button>
+                        </div>
+                        <div className="remove-container">
+                            <button onClick={() => handleRemove(todo)}>
+                                Remove
+                            </button>
+                        </div>
                     </li>
                 ))}
             </ul>
