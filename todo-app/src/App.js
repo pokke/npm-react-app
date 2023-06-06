@@ -78,7 +78,7 @@ function App() {
                         }`}
                         key={todo.id}
                     >
-                        {todo.title}
+                        <div className="title-container">{todo.title}</div>
                         <div className="actions-container">
                             {todo.completed ? (
                                 <button onClick={() => handleUncompleted(todo)}>
@@ -89,11 +89,11 @@ function App() {
                                     Done
                                 </button>
                             )}
-                        </div>
-                        <div className="remove-container">
-                            <button onClick={() => handleRemove(todo)}>
-                                Remove
-                            </button>
+                            <div className="remove-container">
+                                <button onClick={() => handleRemove(todo)}>
+                                    Remove
+                                </button>
+                            </div>
                         </div>
                     </li>
                 ))}
