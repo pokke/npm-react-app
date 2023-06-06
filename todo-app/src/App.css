@@ -63,7 +63,6 @@ button:disabled {
 }
 
 .todo-item.completed {
-    text-decoration: line-through;
     color: #4d4c4c;
     background-color: #be503c;
 }
